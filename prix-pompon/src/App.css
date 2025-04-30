@@ -1,0 +1,21 @@
+.App {
+  text-align: center;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100vw;
+
+  padding-top: 5vh;
+  padding-bottom: 10vh;
+}
+
+.ProduitTracker {
+  font-size: 12vw;
+  font-weight: 700;
+  padding-bottom: 10vh;
+}
+
+.Gras {
+  font-weight: 700;
+}

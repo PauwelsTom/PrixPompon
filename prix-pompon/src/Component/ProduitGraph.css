@@ -1,0 +1,12 @@
+.ProduitGraph {
+    width: 100%;
+    margin: 3vh auto;
+    text-align: center;
+    background-color: white;
+    color: black;
+}
+
+h2 {
+    font-size: 2vh;
+    margin-bottom: 2vh;
+}

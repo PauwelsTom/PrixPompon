@@ -1,0 +1,68 @@
+.ProduitHistorique {
+    margin: 2vh;
+    width: 80vw; /* Le tableau prendra 80% de la largeur de la fenêtre */
+    max-width: 90vw; /* Le tableau ne dépassera pas 90% de la largeur de la fenêtre */
+    overflow-x: auto; /* Ajoute un défilement horizontal si nécessaire */
+}
+
+.HistoriqueTable {
+    width: 100%;
+    border-collapse: collapse; /* Assure que les bordures se collent les unes aux autres */
+}
+
+.TableHeader, .TableRow {
+    display: table-row; /* Utilisation de l'affichage en mode tableau pour une gestion plus cohérente des bordures */
+}
+
+.TableHeader {
+    font-weight: bold;
+    border-bottom: 1px solid #ddd; /* Bordure sous l'en-tête */
+}
+
+.TableCell {
+    display: table-cell; /* Utilisation de display table-cell pour une disposition en tableau */
+    padding: 1vh;
+    text-align: left;
+    border-left: 1px solid #ddd; /* Ajout d'une bordure à gauche pour chaque cellule */
+    border-right: 1px solid #ddd; /* Bordure entre les colonnes */
+    white-space: nowrap;
+    min-width: 100px; /* Assure une largeur minimale pour chaque colonne */
+    flex: 1; /* Utilisation de flex pour garantir que chaque cellule prenne un espace égal */
+}
+
+.TableCell:first-child {
+    border-left: none; /* Pas de bordure à gauche pour la première colonne */
+}
+
+.TableCell:last-child {
+    border-right: none; /* Pas de bordure à droite pour la dernière colonne */
+}
+
+.TableBody {
+    display: table-row-group; /* Permet de gérer les lignes du tableau correctement */
+    max-height: 30vh; /* Limite la hauteur du tableau */
+    overflow-y: auto; /* Permet le défilement vertical */
+    display: block; /* Important pour faire défiler le corps du tableau */
+}
+
+.TableRow {
+    display: table-row; /* Chaque ligne doit être un "table-row" pour mieux gérer les bordures */
+}
+
+.TableRow:hover {
+    background-color: #f9f9f9;
+    color: black;
+}
+
+.SupprimerButton {
+    padding: 0.5vh 1vh;
+    background-color: #e74c3c;
+    color: white;
+    border: none;
+    border-radius: 0.5vh;
+    cursor: pointer;
+}
+
+.SupprimerButton:hover {
+    background-color: #c0392b;
+}
