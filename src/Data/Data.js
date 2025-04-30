@@ -48,3 +48,4 @@ export const Fournitures = [
 ];
 
 export const iconeChevronBas = "https://cdn-icons-png.flaticon.com/512/566/566015.png";
+export const iconeApp = "https://cdn-icons-png.flaticon.com/512/2977/2977789.png"
