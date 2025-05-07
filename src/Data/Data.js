@@ -6,6 +6,7 @@ export const Boissons = [
     "Oasis pomme cassis",
     "Schweppes agrumes",
     "Schweppes Mojito" ,
+    "Ice Tea",
     "Orangina",
     "Fanta orange" ,
     "Fanta fruit du dragon",

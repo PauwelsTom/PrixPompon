@@ -4,7 +4,7 @@ import "./ProduitInfo.css"
 export class ProduitInfo extends Component {
 
     render() {
-        const { name, moyen, dernier, dernierDate, Ajouter } = this.props;
+        const { name, moyen, dernier, dernierDate, Ajouter, quantiteTotale, prixTotal } = this.props;
 
         // Formater les prix avec deux décimales
         const moyenFormate = parseFloat(moyen).toFixed(2);  // Formater le prix moyen
@@ -26,6 +26,15 @@ export class ProduitInfo extends Component {
                         <u className="Gras">{"Date dernier achat:"}</u>
                         <span className="ProduitStatValue">{" " + (dernierDate ? `${dernierDate}` : "Aucun achat enregistré")}</span>
                     </div>
+                    <div>
+                        <u className="Gras">{"Quantité totale:"}</u>
+                        <span className="ProduitStatValue">{" " + quantiteTotale}</span>
+                    </div>
+                    <div>
+                        <u className="Gras">{"Prix total:"}</u>
+                        <span className="ProduitStatValue">{" " + parseFloat(prixTotal).toFixed(2) + "€"}</span>
+                    </div>
+
                 </div>
 
                 <hr className="SeparationLigne" />

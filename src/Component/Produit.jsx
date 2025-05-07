@@ -31,25 +31,34 @@ export class Produit extends Component {
         let moyen_u = 0;
         let dernier = 0;
         let dernierDate = "";
+        let quantiteTotale = 0;
+        let prixTotal = 0;
     
         if (historique.length > 0) {
-            const somme = historique.reduce((acc, item) => acc + (item.Prix / item.Quantite), 0);
-            moyen_u = (somme / historique.length).toFixed(2);
-    
+            quantiteTotale = historique.reduce((acc, item) => acc + item.Quantite, 0);
+            prixTotal = historique.reduce((acc, item) => acc + item.Prix, 0);
+            moyen_u = quantiteTotale > 0 ? (prixTotal / quantiteTotale).toFixed(2) : 0;
+
             const dernierItem = historique[historique.length - 1];
             dernier = (dernierItem.Prix / dernierItem.Quantite).toFixed(2);
     
             const dateObj = new Date(dernierItem.Date);
             const options = { weekday: 'long', day: 'numeric', month: 'long' };
             dernierDate = dateObj.toLocaleDateString("fr-FR", options);
+    
+            quantiteTotale = historique.reduce((acc, item) => acc + item.Quantite, 0);
+            prixTotal = historique.reduce((acc, item) => acc + item.Prix, 0);
         }
     
         this.setState({
             moyen_u: parseFloat(moyen_u),
             dernier: parseFloat(dernier),
             dernierDate: dernierDate,
+            quantiteTotale,
+            prixTotal,
         });
     };
+    
     
     
 
@@ -120,7 +129,15 @@ export class Produit extends Component {
                         :this.state.suppr?
                         <ProduitSuppr name={name} />
                         
-                        :<ProduitInfo name={name} moyen={this.state.moyen_u} dernier={this.state.dernier} dernierDate={this.state.dernierDate} Ajouter={this.Ajouter}/>
+                        :<ProduitInfo
+                            name={name}
+                            moyen={this.state.moyen_u}
+                            dernier={this.state.dernier}
+                            dernierDate={this.state.dernierDate}
+                            Ajouter={this.Ajouter}
+                            quantiteTotale={this.state.quantiteTotale}
+                            prixTotal={this.state.prixTotal}
+                        />
                     }
 
                     <hr className="SeparationLigne" />
