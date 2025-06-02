@@ -129,5 +129,5 @@
 .Unroll {
     display: flex;
     opacity: 1;
-    max-height: 80vh;  /* Choisis une valeur assez grande pour que l'élément s'agrandisse complètement */
+    max-height: 100vh;  /* Choisis une valeur assez grande pour que l'élément s'agrandisse complètement */
 }
