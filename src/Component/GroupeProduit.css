@@ -1,14 +1,15 @@
 .groupe-titre {
     font-size: 5vh;
     height: 5vh;
-    width: 90vw;
+    width: 75vw;
     display: flex;
     align-items: center;
     justify-content: space-between;
     margin-top: 5vh;
-    padding-bottom: 5vh;
+    /* padding-bottom: 5vh;
     padding-top: 5vh;
-    padding-left: 5vw;
+    padding-left: 5vw; */
+    padding: 4vh;
 
     background-color: #5784BA;
     box-shadow: 0 0.5vh 2vh rgba(0, 0, 0, 0.5);

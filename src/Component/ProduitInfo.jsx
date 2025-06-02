@@ -4,7 +4,7 @@ import "./ProduitInfo.css"
 export class ProduitInfo extends Component {
 
     render() {
-        const { name, moyen, dernier, dernierDate, Ajouter, quantiteTotale, prixTotal } = this.props;
+        const { name, moyen, dernier, dernierDate, Ajouter, quantiteTotale, prixTotal, prixUnitaireMin, magasinMin } = this.props;
 
         // Formater les prix avec deux décimales
         const moyenFormate = parseFloat(moyen).toFixed(2);  // Formater le prix moyen
@@ -33,6 +33,13 @@ export class ProduitInfo extends Component {
                     <div>
                         <u className="Gras">{"Prix total:"}</u>
                         <span className="ProduitStatValue">{" " + parseFloat(prixTotal).toFixed(2) + "€"}</span>
+                    </div>
+
+                    <div>
+                        <u className="Gras">{"Le moins cher:"}</u>
+                        <span className="ProduitStatValue">
+                            {" " + (prixUnitaireMin ? prixUnitaireMin.toFixed(2) + "€ (" + magasinMin + ")" : "Aucun")}
+                        </span>
                     </div>
 
                 </div>

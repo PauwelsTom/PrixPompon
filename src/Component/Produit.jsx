@@ -49,6 +49,21 @@ export class Produit extends Component {
             quantiteTotale = historique.reduce((acc, item) => acc + item.Quantite, 0);
             prixTotal = historique.reduce((acc, item) => acc + item.Prix, 0);
         }
+
+        let prixUnitaireMin = null;
+        let magasinMin = "";
+
+        if (historique.length > 0) {
+            const minItem = historique.reduce((min, item) => {
+                const prixUnitaire = item.Prix / item.Quantite;
+                const prixUnitaireMin = min.Prix / min.Quantite;
+                return prixUnitaire < prixUnitaireMin ? item : min;
+            }, historique[0]);
+
+            prixUnitaireMin = (minItem.Prix / minItem.Quantite).toFixed(2);
+            magasinMin = minItem.Magasin;
+        }
+
     
         this.setState({
             moyen_u: parseFloat(moyen_u),
@@ -56,7 +71,10 @@ export class Produit extends Component {
             dernierDate: dernierDate,
             quantiteTotale,
             prixTotal,
+            prixUnitaireMin: parseFloat(prixUnitaireMin),
+            magasinMin: magasinMin
         });
+
     };
     
     
@@ -137,6 +155,8 @@ export class Produit extends Component {
                             Ajouter={this.Ajouter}
                             quantiteTotale={this.state.quantiteTotale}
                             prixTotal={this.state.prixTotal}
+                            prixUnitaireMin={this.state.prixUnitaireMin}
+                            magasinMin={this.state.magasinMin}
                         />
                     }
 
